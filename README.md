@@ -1,19 +1,17 @@
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ShadowLayout-blue.svg?style=flat-square)](http://android-arsenal.com/details/1/3524)
-
-ShadowLayout
+PulseView
 ===================
 
-This library allows you to create a shadow effect for your layout based on your child.
+Widget that generates pulsation relative to your icons.
 
-![](https://lh4.googleusercontent.com/-2JB-2cEv8lk/Vx4FmHQhjOI/AAAAAAAACTA/nrRGFjcQXBsGiISYSZ5k8gUsVcRw5GSRQCL0B/w349-h552-no/sl.png)
+![](https://lh4.googleusercontent.com/-mqVBaXK0XM0/VyhroJmmU7I/AAAAAAAACUs/OmfzeRZsYNQhNAdgFmKvFIU5XDiJ3-z3wCL0B/w401-h689-no/pv.gif)
 
-U can check the sample app [here](https://github.com/DevLight-Mobile-Agency/ShadowLayout/tree/master/app).
+U can check the sample app [here](https://github.com/DevLight-Mobile-Agency/PulseView/tree/master/app).
 
 Download
 ------------
 
-You can download a .aar` from GitHub's [releases page](https://github.com/DevLight-Mobile-Agency/ShadowLayout/releases).
+You can download a .aar` from GitHub's [releases page](https://github.com/DevLight-Mobile-Agency/PulseView/releases).
 
 Or use Gradle jCenter:
 
@@ -25,21 +23,21 @@ dependencies {
             url  'http://dl.bintray.com/gigamole/maven/'
         }
     }
-    compile 'com.github.devlight.shadowlayout:library:+'
+    compile 'com.github.devlight.pulseview:library:+'
 }
 ```
 
 Or Gradle Maven Central:
 
 ```groovy
-compile 'com.github.devlight.shadowlayout:library:1.0.0'
+compile 'com.github.devlight.pulseview:library:1.0.0'
 ```
 
 Or Maven:
 
 ```groovy
 <dependency>
-    <groupId>com.github.devlight.shadowlayout</groupId>
+    <groupId>com.github.devlight.pulseview</groupId>
     <artifactId>library</artifactId>
     <version>1.0.0</version>
     <type>aar</type>
@@ -49,46 +47,71 @@ Or Maven:
 Android SDK Version
 =========
 
-ShadowLayout requires a minimum sdk version of 11. 
+PulseView requires a minimum sdk version of 11. 
 
 Sample
 ========
-
-For ShadowLayout you can set such parameters as:
+        
+For PulseView you can set such parameters as:
  
- - shadowed:
+ - icon:
     
-    allows you to handle shadow visibility.
+    at first you need to set icon for PulseView.
     
- - shadow distance:
+ - icon width and height:
      
-    allows you to set distance of shadow.    
+    allows you to set size of the icon.
+        
+ - pulse side measure:
+    
+    allows you to set pulse side measure. Width or height of PulseView.
+    
+ - pulse count:
+    
+    allows you to set pulse count.
+    
+ - pulse spawn period:
+     
+    allows you to set pulse spawn period.
+     
+ - pulse alpha:
+     
+    allows you to set alpha to pulse.
+    
+ - pulse color:
+     
+    allows you to set pulse color.
 
- - shadow angle:
-    
-    allows you to set shadow angle.
-    
- - shadow radius:
+ - interpolator:
      
-    allows you to set shadow radius.
-     
- - shadow color:
-     
-    allows you to set shadow color.
+    allows you to set pulse interpolator. Choose yours.
 
-Angle can only be positive and be in range from 0 to 360 degrees.
+ - listener:
+     
+    allows you to set pulse listener. OnStart and OnFinish listeners.
 
-ShadowLayout automatically set padding for shadow space draw.
+In preview mode PulseView presents incorrectly cause of canvas can`t make scale in this mode.
 
 Check out in code init:
 
 ```java
-final ShadowLayout shadowLayout = (ShadowLayout) findViewById(R.id.sl);
-shadowLayout.setIsShadowed(true);
-shadowLayout.setShadowAngle(45);
-shadowLayout.setShadowRadius(20);
-shadowLayout.setShadowDistance(30);
-shadowLayout.setShadowColor(Color.DKGRAY);
+final PulseView pulseView = (PulseView) findViewById(R.id.pv);
+pulseView.setPulseColor(Color.BLACK);
+pulseView.setPulseCount(5);
+pulseView.setPulseMeasure(PulseView.PulseMeasure.WIDTH);
+pulseView.setIconHeight(200);
+pulseView.setIconWidth(200);
+pulseView.setIconRes(R.drawable.icon);
+pulseView.setPulseAlpha(70);
+pulseView.setInterpolator(new LinearInterpolator());
+pulseView.setPulseListener(new PulseView.PulseListener(...));
+```
+
+To start or finish pulse you need to call methods:
+
+```java
+pulseView.startPulse();
+pulseView.finishPulse();
 ```
             
 Other methods check out in sample.
@@ -96,30 +119,30 @@ Other methods check out in sample.
 And XML init:
 
 ```xml
-<com.gigamole.samples.ShadowLayout
+<com.gigamole.library.PulseView
+    android:id="@+id/pv"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:sl_shadowed="true"
-    app:sl_shadow_angle="45"
-    app:sl_shadow_radius="20dp"
-    app:sl_shadow_distance="30dp"
-    app:sl_shadow_color="#000">
-    
-    <!-- Set your child`s-->
-    
-</com.gigamole.samples.ShadowLayout>
+    android:layout_height="match_parent"
+    app:pv_icon="@drawable/icon"
+    app:pv_alpha="70"
+    app:pv_color="#eae761"
+    app:pv_count="8"
+    app:pv_measure="height"
+    app:pv_icon_width="168dp"
+    app:pv_icon_height="194dp"
+    app:pv_spawn_period="700"
+    app:pv_interpolator="@android:anim/linear_interpolator"/>
 ```
 
 Getting Help
 ======
 
-To report a specific problem or feature request, [open a new issue on Github](https://github.com/DevLight-Mobile-Agency/ShadowLayout/issues/new).
+To report a specific problem or feature request, [open a new issue on Github](https://github.com/DevLight-Mobile-Agency/PulseView/issues/new).
 
 License
 ======
 
-Apache 2.0 and MIT. See [LICENSE](https://github.com/DevLight-Mobile-Agency/ShadowLayout/blob/master/LICENSE.txt) file for details.
-
+Apache 2.0 and MIT. See [LICENSE](https://github.com/DevLight-Mobile-Agency/PulseView/blob/master/LICENSE.txt) file for details.
 
 Author
 =======

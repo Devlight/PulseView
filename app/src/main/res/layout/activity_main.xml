@@ -17,7 +17,7 @@
         app:pv_measure="height"
         app:pv_icon_width="168dp"
         app:pv_icon_height="194dp"
-        app:pv_spawn_period="600"
+        app:pv_spawn_period="700"
         app:pv_interpolator="@android:anim/linear_interpolator"/>
 
     <TextView

@@ -45,9 +45,9 @@ dependencies {
     compile 'org.jsoup:jsoup:+'
 }
 
-def siteUrl = 'https://github.com/DevLight-Mobile-Agency/ShadowLayout'
-def gitUrl = 'https://github.com/DevLight-Mobile-Agency/ShadowLayout.git'
-group = "com.github.devlight.shadowlayout"
+def siteUrl = 'https://github.com/DevLight-Mobile-Agency/PulseView'
+def gitUrl = 'https://github.com/DevLight-Mobile-Agency/PulseView.git'
+group = "com.github.devlight.pulseview"
 
 install {
     repositories.mavenInstaller {
@@ -57,8 +57,8 @@ install {
                 packaging 'aar'
 
                 // Add your description here
-                name 'ShadowLayout'
-                description = 'This library allows you to create a shadow effect for your layout based on your child.'
+                name 'PulseView'
+                description = 'Widget that generates pulsation relative to your icons.'
                 url siteUrl
 
                 // Set your license
@@ -115,7 +115,7 @@ bintray {
     pkg {
         repo = "maven"
         // it is the name that appears in bintray when logged
-        name = "shadowlayout"
+        name = "pulseview"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
