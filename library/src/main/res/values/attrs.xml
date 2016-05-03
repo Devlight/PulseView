@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PulseView">
+        <attr name="pv_icon" format="reference"/>
+        <attr name="pv_icon_width" format="dimension"/>
+        <attr name="pv_icon_height" format="dimension"/>
+        <attr name="pv_count" format="integer"/>
+        <attr name="pv_spawn_period" format="integer"/>
+        <attr name="pv_alpha" format="integer"/>
+        <attr name="pv_color" format="color"/>
+        <attr name="pv_interpolator" format="reference"/>
+        <attr name="pv_measure" format="enum">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
