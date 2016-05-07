@@ -1,4 +1,6 @@
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PulseView-blue.svg?style=flat-square)](http://android-arsenal.com/details/1/3537)
+
 PulseView
 ===================
 
