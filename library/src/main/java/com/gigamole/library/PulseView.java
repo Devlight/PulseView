@@ -4,16 +4,18 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.FloatRange;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -283,14 +285,26 @@ public class PulseView extends View {
                 "Icon not found. Please select the icon and set to PulseView"
         );
 
-        // Get bitmap from resources
-        mIconBitmap = BitmapFactory.decodeResource(getResources(), mIconRes);
-        // Get width and height of bitmap. If there are is some 0, get original size
-        final int width = mIconWidth == 0 ? mIconBitmap.getWidth() : mIconWidth;
-        final int height = mIconHeight == 0 ? mIconBitmap.getHeight() : mIconHeight;
+        final Drawable iconDrawable = ContextCompat.getDrawable(getContext(), mIconRes);
+        if (iconDrawable != null) {
+            // Get width and height of bitmap. If there are is some 0, get original size
+            final int width = mIconWidth == 0 ? iconDrawable.getIntrinsicWidth() : mIconWidth;
+            final int height = mIconHeight == 0 ? iconDrawable.getIntrinsicHeight() : mIconHeight;
 
-        // Create scaled bitmap relative to size
-        mIconBitmap = Bitmap.createScaledBitmap(mIconBitmap, width, height, true);
+            if (iconDrawable instanceof BitmapDrawable) {
+                // Create scaled bitmap relative to size from normal image
+                mIconBitmap = Bitmap.createScaledBitmap(
+                        ((BitmapDrawable) iconDrawable).getBitmap(), width, height, true
+                );
+            } else {
+                // Create icon bitmap for other type of resources, especially SVG
+                mIconBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                final Canvas canvas = new Canvas(mIconBitmap);
+                iconDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+                iconDrawable.draw(canvas);
+            }
+        } else // There is somethings wrong with your icon
+            mIconBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.RGB_565);
     }
 
     // Invalidate pulse. Need to recalculate dest scale relative to pulse measure and
@@ -518,6 +532,7 @@ public class PulseView extends View {
     // pulse models reached their max fraction
     public interface PulseListener {
         public void onStartPulse();
+
         public void onFinishPulse();
     }
 }

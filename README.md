@@ -32,7 +32,7 @@ dependencies {
 Or Gradle Maven Central:
 
 ```groovy
-compile 'com.github.devlight.pulseview:library:1.0.0'
+compile 'com.github.devlight.pulseview:library:1.0.1'
 ```
 
 Or Maven:
@@ -41,7 +41,7 @@ Or Maven:
 <dependency>
     <groupId>com.github.devlight.pulseview</groupId>
     <artifactId>library</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <type>aar</type>
 </dependency>
 ```
@@ -91,6 +91,8 @@ For PulseView you can set such parameters as:
  - listener:
      
     allows you to set pulse listener. OnStart and OnFinish listeners.
+
+Icon can be like normal bitmap and like SVG file.
 
 In preview mode PulseView presents incorrectly cause of canvas can`t make scale in this mode.
 
