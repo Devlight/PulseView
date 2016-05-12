@@ -8,14 +8,14 @@ Widget that generates pulsation relative to your icons.
 
 ![](https://lh4.googleusercontent.com/-mqVBaXK0XM0/VyhroJmmU7I/AAAAAAAACUs/OmfzeRZsYNQhNAdgFmKvFIU5XDiJ3-z3wCL0B/w401-h689-no/pv.gif)
 
-U can check the sample app [here](https://github.com/DevLight-Mobile-Agency/PulseView/tree/master/app).
+You can check the sample app [here](https://github.com/DevLight-Mobile-Agency/PulseView/tree/master/app).
 
 Download
 ------------
 
-You can download a .aar` from GitHub's [releases page](https://github.com/DevLight-Mobile-Agency/PulseView/releases).
+You can download an `.aar` from GitHub's [releases page](https://github.com/DevLight-Mobile-Agency/PulseView/releases).
 
-Or use Gradle jCenter:
+Or alternatively use Gradle jCenter:
 
 ```groovy
 dependencies {
@@ -29,13 +29,13 @@ dependencies {
 }
 ```
 
-Or Gradle Maven Central:
+Gradle Maven Central:
 
 ```groovy
 compile 'com.github.devlight.pulseview:library:1.0.1'
 ```
 
-Or Maven:
+Maven:
 
 ```groovy
 <dependency>
@@ -49,7 +49,7 @@ Or Maven:
 Android SDK Version
 =========
 
-PulseView requires a minimum sdk version of 11. 
+PulseView requires a minimum SDK version of 11. 
 
 Sample
 ========
@@ -86,15 +86,15 @@ For PulseView you can set such parameters as:
 
  - interpolator:
      
-    allows you to set pulse interpolator. Choose yours.
+    allows you to set an interpolator for the pulse.
 
  - listener:
      
-    allows you to set pulse listener. OnStart and OnFinish listeners.
+    allows you to set pulse listener. `OnStart` and `OnFinish` listeners.
 
-Icon can be like normal bitmap and like SVG file.
+The icon to pulse can be a normal bitmap or a SVG file.
 
-In preview mode PulseView presents incorrectly cause of canvas can`t make scale in this mode.
+In preview mode PulseView renders incorrectly because the canvas can`t scale in this mode.
 
 Check out in code init:
 
@@ -118,7 +118,7 @@ pulseView.startPulse();
 pulseView.finishPulse();
 ```
             
-Other methods check out in sample.
+Other methods can be seen within the sample application.
 
 And XML init:
 
