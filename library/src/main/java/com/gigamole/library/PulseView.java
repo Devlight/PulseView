@@ -420,6 +420,12 @@ public class PulseView extends View {
     }
 
     @Override
+    protected void onVisibilityChanged(final View changedView, final int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+        restorePulseState();
+    }
+
+    @Override
     public void onWindowFocusChanged(final boolean hasWindowFocus) {
         super.onWindowFocusChanged(hasWindowFocus);
         // Restore pulse after resume
