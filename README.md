@@ -1,10 +1,15 @@
-
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PulseView-blue.svg?style=flat-square)](http://android-arsenal.com/details/1/3537)
-
 PulseView
 ===================
 
 Widget that generates pulsation relative to your icons.
+
+[![DevLight](https://lh4.googleusercontent.com/-9btnRFp_eVo/V5cfwZsBpMI/AAAAAAAAC4E/s4NGoezKhpAVdVofAoez1QWpzK5Na8_cQCL0B/w147-h20-no/devlight-badge.png)](http://devlight.com.ua)
+
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PulseView-yellow.svg?style=flat)](http://android-arsenal.com/details/1/3537)
+![Android](https://img.shields.io/badge/platform-android-brightgreen.svg?style=flat&label=Platform)
+[![Download](https://api.bintray.com/packages/gigamole/maven/pulseview/images/download.svg)](https://bintray.com/gigamole/maven/pulseview/_latestVersion)
+[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000&label=License)](https://github.com/DevLight-Mobile-Agency/NavigationTabStrip/blob/master/LICENSE.txt)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/14759a0ad2f34908a888ece61731bd2a)](https://www.codacy.com/app/gigamole53/PulseView?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DevLight-Mobile-Agency/PulseView&amp;utm_campaign=Badge_Grade)
 
 ![](https://lh4.googleusercontent.com/-mqVBaXK0XM0/VyhroJmmU7I/AAAAAAAACUs/OmfzeRZsYNQhNAdgFmKvFIU5XDiJ3-z3wCL0B/w401-h689-no/pv.gif)
 
@@ -49,16 +54,16 @@ Maven:
 Android SDK Version
 =========
 
-PulseView requires a minimum SDK version of 11. 
+`PulseView` requires a minimum SDK version of 11. 
 
 Sample
 ========
         
-For PulseView you can set such parameters as:
+For `PulseView` you can set such parameters as:
  
  - icon:
     
-    at first you need to set icon for PulseView.
+    at first you need to set icon for `PulseView`.
     
  - icon width and height:
      
@@ -66,7 +71,7 @@ For PulseView you can set such parameters as:
         
  - pulse side measure:
     
-    allows you to set pulse side measure. Width or height of PulseView.
+    allows you to set pulse side measure. Width or height of `PulseView`.
     
  - pulse count:
     
@@ -90,11 +95,15 @@ For PulseView you can set such parameters as:
 
  - listener:
      
-    allows you to set pulse listener. `OnStart` and `OnFinish` listeners.
+    allows you to set pulse listener. `onStartPulse()` and `onFinishPulse()` listeners.
 
-The icon to pulse can be a normal bitmap or a SVG file.
+<b>Tips</b>
 
-In preview mode PulseView renders incorrectly because the canvas can`t scale in this mode.
+The icon to pulse can be a normal bitmap or a `SVG` file.
+
+In preview mode `PulseView` renders incorrectly because the `Canvas` can`t scale in this mode.
+
+<b>Init</b>
 
 Check out in code init:
 
@@ -120,7 +129,7 @@ pulseView.finishPulse();
             
 Other methods can be seen within the sample application.
 
-And XML init:
+And `XML` init:
 
 ```xml
 <com.gigamole.library.PulseView

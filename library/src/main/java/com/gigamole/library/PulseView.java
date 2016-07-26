@@ -1,5 +1,6 @@
 package com.gigamole.library;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -15,6 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.FloatRange;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
@@ -29,6 +31,7 @@ import java.util.List;
 /**
  * Created by GIGAMOLE on 29.04.2016.
  */
+@SuppressWarnings("unused")
 public class PulseView extends View {
 
     // Default pulse variables
@@ -177,6 +180,7 @@ public class PulseView extends View {
             case PulseMeasure.WIDTH_INDEX:
             default:
                 setPulseMeasure(PulseMeasure.WIDTH);
+                break;
         }
     }
 
@@ -328,6 +332,7 @@ public class PulseView extends View {
         postInvalidate();
     }
 
+    @SuppressLint("DrawAllocation")
     @Override
     protected void onMeasure(final int widthMeasureSpec, final int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -346,6 +351,7 @@ public class PulseView extends View {
         }
     }
 
+    @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(final Canvas canvas) {
         super.onDraw(canvas);
@@ -360,15 +366,13 @@ public class PulseView extends View {
             if (hasWindowFocus()) mCurrentTime = System.currentTimeMillis();
 
             // If view not going to finish, so add new pulse after spawn period
-            if (!mIsFinishPulse) {
-                if (mCurrentTime > (mLastTime + mPulseSpawnPeriod)) {
-                    mLastTime = mCurrentTime;
-                    // Limit pulse models size to pulse count
-                    if (mPulseModels.size() < mPulseCount)
-                        // We need to set start time of pulse model. Its our start value where we
-                        // can calculate fraction of pulse according to pulse duration
-                        mPulseModels.add(0, new PulseModel(mCurrentTime));
-                }
+            if (!mIsFinishPulse && mCurrentTime > (mLastTime + mPulseSpawnPeriod)) {
+                mLastTime = mCurrentTime;
+                // Limit pulse models size to pulse count
+                if (mPulseModels.size() < mPulseCount)
+                    // We need to set start time of pulse model. Its our start value where we
+                    // can calculate fraction of pulse according to pulse duration
+                    mPulseModels.add(0, new PulseModel(mCurrentTime));
             }
 
             // Draw pulse models
@@ -420,7 +424,7 @@ public class PulseView extends View {
     }
 
     @Override
-    protected void onVisibilityChanged(final View changedView, final int visibility) {
+    protected void onVisibilityChanged(@NonNull final View changedView, final int visibility) {
         super.onVisibilityChanged(changedView, visibility);
         restorePulseState();
     }
@@ -461,14 +465,15 @@ public class PulseView extends View {
     private static class SavedState extends BaseSavedState {
 
         // SavedState variables
-        public List<PulseModel> mPulseModels = new ArrayList<>();
-        public boolean mIsPulseStarted;
-        public boolean mIsFinishPulse;
+        private List<PulseModel> mPulseModels;
+        private boolean mIsPulseStarted;
+        private boolean mIsFinishPulse;
 
         public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @SuppressWarnings("unchecked")
         private SavedState(Parcel in) {
             super(in);
             mPulseModels = (List<PulseModel>) in.readSerializable();
@@ -537,8 +542,8 @@ public class PulseView extends View {
     // Pulse listener. OnStart trigger when we start draw pulse. OnFinish trigger when all of
     // pulse models reached their max fraction
     public interface PulseListener {
-        public void onStartPulse();
+        void onStartPulse();
 
-        public void onFinishPulse();
+        void onFinishPulse();
     }
 }
