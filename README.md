@@ -157,6 +157,13 @@ License
 
 Apache 2.0 and MIT. See [LICENSE](https://github.com/DevLight-Mobile-Agency/PulseView/blob/master/LICENSE.txt) file for details.
 
+Inspiration
+======
+
+|     |     |
+|:---:|:---:|
+![](https://d13yacurqjgara.cloudfront.net/users/7851/screenshots/2259256/cel-fianimation-2.gif)|![](https://d13yacurqjgara.cloudfront.net/users/153277/screenshots/2242921/open-uri20150914-3-1sa3649)
+
 Author
 =======
 
