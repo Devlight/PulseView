@@ -57,7 +57,9 @@ Android SDK Version
 `PulseView` requires a minimum SDK version of 11. 
 
 Sample
-========
+======
+
+<b>Parameters</b>
         
 For `PulseView` you can set such parameters as:
  
