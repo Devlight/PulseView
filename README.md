@@ -6,9 +6,9 @@ Widget that generates pulsation relative to your icons.
 [![DevLight](https://lh4.googleusercontent.com/-9btnRFp_eVo/V5cfwZsBpMI/AAAAAAAAC4E/s4NGoezKhpAVdVofAoez1QWpzK5Na8_cQCL0B/w147-h20-no/devlight-badge.png)](http://devlight.com.ua)
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PulseView-yellow.svg?style=flat)](http://android-arsenal.com/details/1/3537)
-![Android](https://img.shields.io/badge/platform-android-brightgreen.svg?style=flat&label=Platform)
+[![Android](https://img.shields.io/badge/platform-android-brightgreen.svg?style=flat&label=Platform)](https://github.com/DevLight-Mobile-Agency)
 [![Download](https://api.bintray.com/packages/gigamole/maven/pulseview/images/download.svg)](https://bintray.com/gigamole/maven/pulseview/_latestVersion)
-[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000&label=License)](https://github.com/DevLight-Mobile-Agency/NavigationTabStrip/blob/master/LICENSE.txt)
+[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000&label=License)](https://github.com/DevLight-Mobile-Agency/PulseView/blob/master/LICENSE.txt)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/14759a0ad2f34908a888ece61731bd2a)](https://www.codacy.com/app/gigamole53/PulseView?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DevLight-Mobile-Agency/PulseView&amp;utm_campaign=Badge_Grade)
 
 ![](https://lh4.googleusercontent.com/-mqVBaXK0XM0/VyhroJmmU7I/AAAAAAAACUs/OmfzeRZsYNQhNAdgFmKvFIU5XDiJ3-z3wCL0B/w401-h689-no/pv.gif)
