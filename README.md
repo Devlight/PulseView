@@ -172,3 +172,7 @@ Author
 Made in [DevLight Mobile Agency](https://github.com/DevLight-Mobile-Agency)
 
 Created by [Basil Miller](https://github.com/GIGAMOLE) - [@gigamole](mailto:http://gigamole53@gmail.com)
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/DevLight-Mobile-Agency/PulseView/badge.svg?style=beer-square)](https://beerpay.io/DevLight-Mobile-Agency/PulseView)  [![Beerpay](https://beerpay.io/DevLight-Mobile-Agency/PulseView/make-wish.svg?style=flat-square)](https://beerpay.io/DevLight-Mobile-Agency/PulseView?focus=wish)
