@@ -3,32 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4583d3"
+    android:background="#fff"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.gigamole.library.PulseView
         android:id="@+id/pv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:pv_icon="@drawable/icon"
+        app:pv_icon="@drawable/ic_logo"
         app:pv_alpha="70"
-        app:pv_color="#eae761"
+        app:pv_color="#000"
         app:pv_count="8"
-        app:pv_measure="height"
-        app:pv_icon_width="168dp"
-        app:pv_icon_height="194dp"
+        app:pv_measure="width"
         app:pv_spawn_period="700"
-        app:pv_interpolator="@android:anim/linear_interpolator"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"
-        android:text="111"/>
+        app:pv_interpolator="@android:anim/decelerate_interpolator"/>
 
 </FrameLayout>

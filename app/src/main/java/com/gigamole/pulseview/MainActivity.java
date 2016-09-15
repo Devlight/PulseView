@@ -45,11 +45,11 @@ public class MainActivity extends Activity implements
 
     @Override
     public void onStartPulse() {
-        Toast.makeText(MainActivity.this, "Start pulse", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "Start pulse", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onFinishPulse() {
-        Toast.makeText(MainActivity.this, "Finish pulse", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(MainActivity.this, "Finish pulse", Toast.LENGTH_SHORT).show();
     }
 }
