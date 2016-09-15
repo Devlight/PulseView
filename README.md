@@ -24,7 +24,7 @@ Widget that generates pulsation relative to your icons.
 <br/>
 
 <p align="center">
-    <img src="https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScOHB0b05Uc0VCUEE"/>
+    <img src="https://drive.google.com/uc?export=download&id=0BxPO_UeS7wScN1lmb19QZklFTEk"/>
 </p>
 
 You can check the sample app [here](https://github.com/DevLight-Mobile-Agency/PulseView/tree/master/app).
