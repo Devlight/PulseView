@@ -15,14 +15,15 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.FloatRange;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
+
+import androidx.annotation.FloatRange;
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import java.io.Serializable;
 import java.util.ArrayList;
